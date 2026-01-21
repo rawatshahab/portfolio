@@ -84,23 +84,23 @@ const Hero = () => {
                 transition={{ duration: 0.8 }}
                 className="relative w-[400px] h-[400px] flex items-center justify-center"
              >
-                {/* Orbital Rings */}
+                {/* Orbital Rings - Added will-change-transform for performance */}
                 <motion.div 
                     animate={{ rotate: 360 }}
                     transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                    className="absolute w-full h-full border border-primary/20 rounded-full"
+                    className="absolute w-full h-full border border-primary/20 rounded-full will-change-transform"
                 />
                 <motion.div 
                     animate={{ rotate: -360 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute w-3/4 h-3/4 border border-dashed border-primary/30 rounded-full"
+                    className="absolute w-3/4 h-3/4 border border-dashed border-primary/30 rounded-full will-change-transform"
                 />
 
-                {/* Floating Icons */}
+                {/* Floating Icons - Added will-change-transform */}
                 <motion.div 
                     animate={{ y: [-10, 10, -10] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-0 p-3 bg-card shadow-lg rounded-xl border border-border"
+                    className="absolute top-0 p-3 bg-card shadow-lg rounded-xl border border-border will-change-transform"
                 >
                     <LayoutTemplate className="text-blue-500" size={28} />
                 </motion.div>
@@ -108,7 +108,7 @@ const Hero = () => {
                 <motion.div 
                     animate={{ y: [10, -10, 10] }}
                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute bottom-10 right-10 p-3 bg-card shadow-lg rounded-xl border border-border"
+                    className="absolute bottom-10 right-10 p-3 bg-card shadow-lg rounded-xl border border-border will-change-transform"
                 >
                     <Server className="text-green-500" size={28} />
                 </motion.div>
@@ -116,7 +116,7 @@ const Hero = () => {
                 <motion.div 
                     animate={{ x: [-5, 5, -5] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                    className="absolute left-4 p-3 bg-card shadow-lg rounded-xl border border-border"
+                    className="absolute left-4 p-3 bg-card shadow-lg rounded-xl border border-border will-change-transform"
                 >
                     <Smartphone className="text-purple-500" size={28} />
                 </motion.div>

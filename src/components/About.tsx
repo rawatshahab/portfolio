@@ -60,11 +60,11 @@ const About = () => {
           <div className="w-full md:w-5/12 flex justify-center order-first">
             <div className="relative w-full max-w-sm aspect-square flex items-center justify-center">
               
-              {/* Animated decorative circles */}
+              {/* Animated decorative circles - Added will-change-transform */}
               <motion.div 
                  animate={{ scale: [1, 1.1, 1], rotate: 180 }}
                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                 className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-2xl"
+                 className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-2xl will-change-transform"
               />
               
               <div className="relative z-10 grid grid-cols-2 gap-4">

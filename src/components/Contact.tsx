@@ -1,4 +1,4 @@
-import { useState } from "react"; // Import useState
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,7 +23,6 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // 2. Handle Input Changes
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -31,36 +30,41 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // 3. Helper to encode data for Netlify
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
-
-  // 4. Handle Submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setIsSubmitting(true);
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formData }), // Include form-name
-    })
-      .then(() => {
-        toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", subject: "", message: "" }); // Reset form
-      })
-      .catch((error) => {
-        console.error(error);
-        toast.error("Failed to send message. Please try again.");
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+    const formDataToSend = new FormData(form);
+    formDataToSend.set("access_key", "e3be1817-5671-4ea3-878b-e35645f8b486");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend,
       });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Message sent successfully!");
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+        // Optional: Reset the actual HTML form if needed
+        form.reset();
+      } else {
+        console.error("Error", data);
+        toast.error(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission Error", error);
+      toast.error("An error occurred. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -164,16 +168,10 @@ const Contact = () => {
           >
             <Card className="border-border/50 shadow-xl shadow-primary/5 bg-card/50 backdrop-blur-sm">
               <CardContent className="p-8">
-                {/* 5. Update Form Tag attributes */}
                 <form
                   onSubmit={handleSubmit}
                   className="space-y-6"
-                  data-netlify="true"
-                  name="contact"
                 >
-                  {/* 6. CRITICAL: Hidden Input for Netlify */}
-                  <input type="hidden" name="form-name" value="contact" />
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium ml-1">
@@ -181,9 +179,9 @@ const Contact = () => {
                       </label>
                       <Input
                         id="name"
-                        name="name" // Added name
-                        value={formData.name} // Added value
-                        onChange={handleChange} // Added onChange
+                        name="name" 
+                        value={formData.name}
+                        onChange={handleChange}
                         placeholder="John Doe"
                         required
                         className="h-11 bg-secondary/20 border-border/50 focus:bg-background transition-colors"
@@ -195,10 +193,10 @@ const Contact = () => {
                       </label>
                       <Input
                         id="email"
-                        name="email" // Added name
+                        name="email"
                         type="email"
-                        value={formData.email} // Added value
-                        onChange={handleChange} // Added onChange
+                        value={formData.email}
+                        onChange={handleChange}
                         placeholder="john@example.com"
                         required
                         className="h-11 bg-secondary/20 border-border/50 focus:bg-background transition-colors"
@@ -211,9 +209,9 @@ const Contact = () => {
                     </label>
                     <Input
                       id="subject"
-                      name="subject" // Added name
-                      value={formData.subject} // Added value
-                      onChange={handleChange} // Added onChange
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       placeholder="Project Inquiry"
                       required
                       className="h-11 bg-secondary/20 border-border/50 focus:bg-background transition-colors"
@@ -225,9 +223,9 @@ const Contact = () => {
                     </label>
                     <Textarea
                       id="message"
-                      name="message" // Added name
-                      value={formData.message} // Added value
-                      onChange={handleChange} // Added onChange
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Tell me about your project..."
                       className="min-h-[180px] bg-secondary/20 border-border/50 focus:bg-background transition-colors resize-none"
                       required
@@ -236,7 +234,7 @@ const Contact = () => {
                   <Button
                     type="submit"
                     size="lg"
-                    disabled={isSubmitting} // Disable while sending
+                    disabled={isSubmitting}
                     className="w-full h-12 text-base font-medium transition-all hover:scale-[1.01] shadow-lg shadow-primary/20"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
