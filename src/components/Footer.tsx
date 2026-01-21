@@ -17,17 +17,14 @@ const Footer = () => {
               Building digital experiences with modern technologies. Focused on performance, accessibility, and clean code.
             </p>
             <div className="flex gap-4">
-              <a href="https://github.com/rawatshahab" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/rawatshahab" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/mayankrawat2402/" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/mayankrawat2402/" target="_blank"  className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="https://x.com/home" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://x.com/home" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Twitter size={20} />
-              </a>
-              <a href="mailto:mr.mayank2402@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                <Mail size={20} />
               </a>
             </div>
           </div>

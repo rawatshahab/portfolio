@@ -6,6 +6,8 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  // Using 'export=download' to force download instead of viewing
+  const resumeUrl = "https://drive.google.com/uc?export=download&id=1JIduPNnk7prrkcwV-XJhkdA_jH8cQ-bo"; 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -77,7 +79,7 @@ const Navbar = () => {
               </a>
             ))}
             <ModeToggle />
-            <a href="/resume.pdf" download="Mayank_Rawat_CV.pdf" target="_blank" rel="noopener noreferrer">
+            <a href={resumeUrl}>
               <Button>Download CV</Button>
             </a>
           </div>
@@ -116,10 +118,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a 
-                href="/resume.pdf" 
-                download="Mayank_Rawat_CV.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href={resumeUrl}
                 onClick={() => setIsOpen(false)}
               >
                 <Button>Download CV</Button>
