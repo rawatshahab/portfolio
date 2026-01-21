@@ -64,13 +64,13 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="flex gap-6 mt-12 text-muted-foreground"
             >
-              <a href="https://github.com/rawatshahab" className="hover:text-primary transition-colors">
+              <a href="https://github.com/rawatshahab" target="_blank" className="hover:text-primary transition-colors">
                 <Github size={24} />
               </a>
-              <a href="https://www.linkedin.com/in/mayankrawat2402/" className="hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/mayankrawat2402/" target="_blank" className="hover:text-primary transition-colors">
                 <Linkedin size={24} />
               </a>
-              <a href="https://x.com/home" className="hover:text-primary transition-colors">
+              <a href="https://x.com/home" target="_blank" className="hover:text-primary transition-colors">
                 <Twitter size={24} />
               </a>
             </motion.div>
