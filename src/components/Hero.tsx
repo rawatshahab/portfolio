@@ -30,8 +30,8 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight"
             >
-              Full Stack <br />
-              <span className="text-primary">Engineering.</span>
+              SDE 1 <br />
+              <span className="text-primary">Backend.</span>
             </motion.h1>
 
             <motion.p
