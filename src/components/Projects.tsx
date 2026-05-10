@@ -6,15 +6,21 @@ import { ExternalLink, Github, Folder } from "lucide-react";
 
 const projects = [
   {
-    title: "Mailtr",
+    title: "SaaS API Gateway",
     description:
-      "Mailer SaaS on an Nx monorepo with NestJS and React. Create unlimited emails for custom domains with a full inbox experience. Features automated CI/CD and VPS deployment.",
+      "Self-hosted API gateway platform deployable via Docker on any VPS. Features a WebSocket control plane with config hot-reload, multi-tenant PostgreSQL provisioning, rate limiting, JWT auth, Prometheus metrics, request log batching, and a Next.js admin dashboard.",
     image:
-      "https://res.cloudinary.com/didovzx3t/image/upload/v1768926505/Screenshot_2026-01-20_at_21.52.08_mlged3.png",
-    tags: ["Nx", "NestJS", "React", "TypeScript", "VPS"],
+      "https://res.cloudinary.com/dic7czrqe/image/upload/v1778434501/Screenshot_2026-05-10_at_11.04.54_PM_xfkmv1.png",
+    tags: [
+      "Docker",
+      "NestJS",
+      "Next.js",
+      "PostgreSQL",
+      "WebSockets",
+      "Prometheus",
+    ],
     links: {
-      demo: "https://mailtr.co/about",
-      repo: "https://github.com/The-Regiment/mailtr",
+      repo: "https://github.com/rawatshahab/api-gateway",
     },
   },
   {
@@ -25,19 +31,19 @@ const projects = [
       "https://res.cloudinary.com/didovzx3t/image/upload/v1768926525/Screenshot_2026-01-20_at_21.58.35_grttfr.png",
     tags: ["Nx", "NestJS", "React", "Docker", "WebSockets"],
     links: {
-      demo: "https://squadup.in",
       repo: "https://github.com/rawatshahab/squadup.in",
     },
   },
   {
-    title: "AI Code Review Agent",
+    title: "Mailtr",
     description:
-      "Automated code review agent powered by Gemini and n8n. Integrates directly with GitHub to analyze Pull Requests, providing intelligent, context-aware inline comments and suggestions to improve code quality and maintain standards.",
+      "Mailer SaaS on an Nx monorepo with NestJS and React. Create unlimited emails for custom domains with a full inbox experience. Features automated CI/CD and VPS deployment.",
     image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
-    tags: ["n8n", "Gemini AI", "GitHub webhooks"],
+      "https://res.cloudinary.com/didovzx3t/image/upload/v1768926505/Screenshot_2026-01-20_at_21.52.08_mlged3.png",
+    tags: ["Nx", "NestJS", "React", "TypeScript", "VPS"],
     links: {
-      repo: "https://github.com/rawatshahab/squadup.in",
+      demo: "https://mailtr.co/about",
+      repo: "https://github.com/The-Regiment/mailtr",
     },
   },
 ];
