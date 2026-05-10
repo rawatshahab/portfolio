@@ -21,6 +21,7 @@ const projects = [
     ],
     links: {
       repo: "https://github.com/rawatshahab/api-gateway",
+      demo: "https://novagate.dev",
     },
   },
   {
@@ -32,6 +33,7 @@ const projects = [
     tags: ["Nx", "NestJS", "React", "Docker", "WebSockets"],
     links: {
       repo: "https://github.com/rawatshahab/squadup.in",
+      demo: "https://squadup.in",
     },
   },
   {
