@@ -6,7 +6,7 @@ import { ExternalLink, Github, Folder } from "lucide-react";
 
 const projects = [
   {
-    title: "SaaS API Gateway",
+    title: "NovaGate",
     description:
       "Self-hosted API gateway platform deployable via Docker on any VPS. Features a WebSocket control plane with config hot-reload, multi-tenant PostgreSQL provisioning, rate limiting, JWT auth, Prometheus metrics, request log batching, and a Next.js admin dashboard.",
     image:
