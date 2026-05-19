@@ -14,16 +14,30 @@ const Footer = () => {
               Portfolio<span className="text-primary">.</span>
             </Link>
             <p className="text-muted-foreground max-w-xs">
-              Building digital experiences with modern technologies. Focused on performance, accessibility, and clean code.
+              Building digital experiences with modern technologies. Focused on
+              performance, accessibility, and clean code.
             </p>
             <div className="flex gap-4">
-              <a href="https://github.com/rawatshahab" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="https://github.com/mayank-rawat98"
+                target="_blank"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Github size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/mayankrawat2402/" target="_blank"  className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="https://www.linkedin.com/in/mayankrawat2402/"
+                target="_blank"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Linkedin size={20} />
               </a>
-              <a href="https://x.com/home" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="https://x.com/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Twitter size={20} />
               </a>
             </div>
@@ -33,10 +47,38 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Navigation</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="/#about" className="hover:text-primary transition-colors">About</a></li>
-              <li><a href="/#experience" className="hover:text-primary transition-colors">Experience</a></li>
-              <li><a href="/#projects" className="hover:text-primary transition-colors">Projects</a></li>
-              <li><a href="/#contact" className="hover:text-primary transition-colors">Contact</a></li>
+              <li>
+                <a
+                  href="/#about"
+                  className="hover:text-primary transition-colors"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#experience"
+                  className="hover:text-primary transition-colors"
+                >
+                  Experience
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#projects"
+                  className="hover:text-primary transition-colors"
+                >
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#contact"
+                  className="hover:text-primary transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -44,16 +86,37 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Legal</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li><Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
-              <li><Link to="/privacy" className="hover:text-primary transition-colors">Cookie Policy</Link></li>
+              <li>
+                <Link
+                  to="/privacy"
+                  className="hover:text-primary transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/terms"
+                  className="hover:text-primary transition-colors"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/privacy"
+                  className="hover:text-primary transition-colors"
+                >
+                  Cookie Policy
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            © {currentYear} Mayank Rawat. 
+            © {currentYear} Mayank Rawat.
           </p>
         </div>
       </div>

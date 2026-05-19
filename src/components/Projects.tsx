@@ -20,7 +20,7 @@ const projects = [
       "Prometheus",
     ],
     links: {
-      repo: "https://github.com/rawatshahab/api-gateway",
+      repo: "https://github.com/mayank-rawat98/api-gateway",
       demo: "https://novagate.dev",
     },
   },
@@ -32,7 +32,7 @@ const projects = [
       "https://res.cloudinary.com/didovzx3t/image/upload/v1768926525/Screenshot_2026-01-20_at_21.58.35_grttfr.png",
     tags: ["Nx", "NestJS", "React", "Docker", "WebSockets"],
     links: {
-      repo: "https://github.com/rawatshahab/squadup.in",
+      repo: "https://github.com/mayank-rawat98/squadup.in",
       demo: "https://squadup.in",
     },
   },
